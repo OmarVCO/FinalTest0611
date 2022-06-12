@@ -3,6 +3,7 @@ body{
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 120%;
+  overflow-x: clip;
 
 }
 
@@ -14,28 +15,45 @@ body{
     background: rgba(71, 71, 71, 0.623);
     /*background-image: url('https://source.unsplash.com/1600x900/?landscape');*/
     padding-bottom: 20px;
+    padding-top: 15px;
   }
+
+  .weather {
+      padding: 15px;
+      background: #bd928e82;
+      border-radius: 27px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+
 
   .header{
     display: flex;
-    flex-direction: row-reverse;
-}
+    justify-content: space-between;
+    width: 100%;
+    background: black;
+    padding: 5px 10px;
+  }
+
+  .dropdown-menu{
+    background: red;
+    min-width: 250px;
+    max-width: 500px;
+  }
+
 .five-days{
-  height: 70vh;
+  /* height: 70vh; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background: rgba(217, 209, 209, 0.62);
+  background: rgba(217, 209, 209, 0.72);
   padding-top: 15px;
   padding-bottom: 15px;
   align-content: center;
   align-items: center;
   }
-
-.three-hours{
-  height: 30px;
-
-}
   
   .card {
     background: #000000d0;
@@ -60,7 +78,7 @@ body{
     height: 44px;
     width: 44px;
     outline: none;
-    background: #7c7c7c2b;
+    background: #f0dfdf2b;
     color: white;
     cursor: pointer;
     transition: 0.2s ease-in-out;
@@ -71,10 +89,10 @@ body{
     outline: none;
     padding: 0.4em 1em;
     border-radius: 24px;
-    background: #7c7c7c2b;
+    background: #f0dfdf2b;
     color: white;
     font-family: inherit;
-    font-size: 105%;
+    font-size: 100%;
     width: calc(100% - 100px);
   }
   
@@ -142,4 +160,35 @@ body{
 .weather-forecast .weather-forecast-item .temp{
     font-weight: 100;
     font-size: 12px;
+}
+
+.three-hours{
+  display: flex;
+  flex-direction: row;
+  background: rgba(247, 140, 52, 0.685);
+  padding: 15px;
+}
+
+.weather-forecast .weather-forecast-hourly{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.2)
+}
+
+.weather-forecast .weather-forecast-hourly .day{
+  padding: 5px 15px;
+  background: #3C3C44;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.weather-forecast .weather-forecast-hourly .temp{
+  font-weight: 100;
+  font-size: 12px;
 }
