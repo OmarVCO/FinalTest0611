@@ -22,22 +22,25 @@ navigator.geolocation.getCurrentPosition((success) => {
     let {latitude, longitude } = success.coords;
     console.log(latitude,longitude);
 
-    fetch( `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&cnt=5&units=metric&appid=${API_KEY}`
+    fetch( `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely&cnt=5&units=metric&appid=${API_KEY}`
     ).then(res => res.json()).then(data => {
 
       console.log(data);
       showWeatherData(data);
     })
-    
+
 })
 }
 
 function showWeatherData(data) {
-  let (sunrise, sunset) = data.city;
-  let (humidity, pressure, temp) =  data.list[0].main;
-  let (speed) = data.list[0].wind;
-  console.log(sunrise);
+  let {sunrise, sunset,temp, humidity,pressure,wind_speed} = data.current;
+  let {icon} =  data.current.weather[0];
+  console.log(sunrise,sunset,humidity,pressure,temp,wind_speed,icon);
+
+  //${window.moment(sunrise * 1000).format('HH:mm a')}
+
 }
+
 
 // let otherDayForcast = ''
 // data.daily.forEach(day, idx) =>  {
