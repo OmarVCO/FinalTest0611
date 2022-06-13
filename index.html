@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +10,13 @@
   <script src="./script.js" defer></script>
 
   <script> 
-    let = autocomplete; 
+    let autocomplete; 
     function initAutocomplete() {
       autocomplete = new google.maps.places.Autocomplete (
         document.getElementById('autocomplete'),
         {
           types: ['(cities)'],
-          componentRestrictions: {country: "us"},
+          // componentRestrictions: {country: "us"},
           fields: ['place_id' , 'geometry' , 'name']
         }
       );
@@ -30,13 +29,16 @@
           document.getElementById('autocomplete').placeholder = 'Enter a place';
         } else {
           document.getElementById('details'.innerHTML = place.name);
-          console.log(place);
+          // console.log(place.geometry.viewport.Ab.h, place.geometry.viewport.Ua.h);
+          var lat2 = place.geometry.viewport.Ab.h;
+          var lon2 = place.geometry.viewport.Ua.h;
+          console.log(lat2,lon2);
         }
         }
-
    </script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv1x3OMqyjCO13XD4UxNgNdgT_zRWakws&libraries=places&callback=initAutocomplete" async defer></script>
+
 </head>
 
 <div class="header">
