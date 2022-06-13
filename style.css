@@ -10,8 +10,9 @@ body{
   font-family: 'Open Sans', sans-serif;
   font-size: 120%;
   overflow-x: clip;
-  overflow-y: clip;
+  overflow-y: scroll;
   background-image: url('https://source.unsplash.com/1600x900/?landscape');
+  background-size: cover;
 
 
 }
